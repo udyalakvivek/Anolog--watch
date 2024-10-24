@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "A Clock F0r U",
+  "version": "1.0",
+  "description": "A simple flip clock extension.",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "permissions": ["tabs"],
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "icons": {
+    "16": "download.png",
+    "48": "download.png",
+    "128": "download.png"
+  }
+}
+
+
