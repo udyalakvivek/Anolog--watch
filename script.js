@@ -216,3 +216,36 @@ document.addEventListener('DOMContentLoaded', () => {
     updateFlipClock(); // Call to set the current time immediately
     setInterval(updateFlipClock, 1000); // Update every second
 });
+
+
+// Search bar
+
+const searchInput = document.getElementById('search-input')
+
+// searchInput.addEventListener('input', function () {
+//     const value = searchInput.value
+//     searchInput.ariaPlaceholder = value || "Search Google..."
+// })
+
+
+
+// Hide X button
+
+const clearbtn = document.getElementById('hide-btn')
+
+// change display property
+searchInput.addEventListener('input', function () {
+    if (searchInput.value) {
+        clearbtn.style.display ='block'
+    }
+    else {
+        clearbtn.style.display ='none'
+    }
+})
+
+// clear input 
+clearbtn.addEventListener('click', function () {
+    searchInput.value = ''; 
+    clearbtn.style.display = 'none'; 
+    searchInput.focus(); 
+});
