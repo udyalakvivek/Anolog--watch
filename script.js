@@ -1,144 +1,3 @@
-// let isFlipping = false;
-
-// function getGreeting() {
-//     const now = new Date();
-//     const hours = now.getHours();
-
-
-//     if (hours < 12) {
-//         return "Good Morning";
-//     } else if (hours < 18) {
-//         return "Good Afternoon";
-//     } else {
-//         return "Good Evening";
-//     }
-// }
-
-// function updateFlipClock() {
-//     const now = new Date();
-//     let hours = now.getHours();
-//     const minutes = String(now.getMinutes()).padStart(2, '0');
-//     const seconds = String(now.getSeconds()).padStart(2, '0');
-
-//     const isPM = hours >= 12;
-//     const ampm = isPM ? 'PM' : 'AM';
-//     hours = hours % 12;
-//     hours = hours ? hours : 12; // the hour '0' should be '12'
-//     const formattedHours = String(hours).padStart(2, '0');
-
-//     // for getGreeting
-//     const greetingMessage = getGreeting();
-//     document.getElementById('greeting').innerText = `Hello Pandey Sir✌️, ${greetingMessage} 😇`;
-
-//     flip('hour', formattedHours);
-//     flip('minute', minutes);
-//     flip('second', seconds);
-//     flip('ampm', ampm);
-// }
-
-// function flip(type, value) {
-//     const front = document.getElementById(`${type}-front`);
-//     const back = document.getElementById(`${type}-back`);
-
-//     if (!front || !back) {
-//         console.error(`Element with ID ${type}-front or ${type}-back does not exist.`);
-//         return;
-//     }
-
-//     if (front.innerText !== value && !isFlipping) {
-//         isFlipping = true;
-//         back.innerText = value;
-
-//         const flipCardInner = front.parentElement;
-//         flipCardInner.style.transform = 'rotateX(180deg)';
-
-//         setTimeout(() => {
-//             front.innerText = value;
-//             flipCardInner.style.transform = 'rotateX(0deg)';
-//             isFlipping = false;
-//         }, 800);
-//     }
-// }
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     updateFlipClock();
-//     setInterval(updateFlipClock, 1000);
-// });
-
-
-
-
-// let isFlipping = false;
-
-// function getGreeting() {
-//     const now = new Date();
-//     const hours = now.getHours();
-
-//     if (hours < 12) {
-//         return "Good Morning";
-//     } else if (hours < 18) {
-//         return "Good Afternoon";
-//     } else {
-//         return "Good Evening";
-//     }
-// }
-
-// function updateFlipClock() {
-//     const now = new Date();
-//     let hours = now.getHours();
-//     const minutes = String(now.getMinutes()).padStart(2, '0');
-//     const seconds = String(now.getSeconds()).padStart(2, '0');
-
-//     const isPM = hours >= 12;
-//     const ampm = isPM ? 'PM' : 'AM';
-//     hours = hours % 12;
-//     hours = hours ? hours : 12; // the hour '0' should be '12'
-//     const formattedHours = String(hours).padStart(2, '0');
-
-//     // Update greeting message
-//     const greetingMessage = getGreeting();
-//     document.getElementById('greeting').innerText = `Hello Vivek✌️, ${greetingMessage} 😇`;
-
-//     flip('hour', formattedHours);
-//     flip('minute', minutes);
-//     flip('second', seconds);
-
-//     // Update AM/PM indicator
-//     flip('ampm', ampm);
-// }
-
-// function flip(type, value) {
-//     const front = document.getElementById(`${type}-front`);
-//     const back = document.getElementById(`${type}-back`);
-
-//     if (!front || !back) {
-//         console.error(`Element with ID ${type}-front or ${type}-back does not exist.`);
-//         return;
-//     }
-
-//     if (front.innerText !== value && !isFlipping) {
-//         isFlipping = true;
-//         back.innerText = value;
-
-//         const flipCardInner = front.parentElement;
-//         flipCardInner.style.transform = 'rotateX(180deg)';
-
-//         setTimeout(() => {
-//             front.innerText = value;
-//             flipCardInner.style.transform = 'rotateX(0deg)';
-//             isFlipping = false;
-//         }, 800);
-//     }
-// }
-
-// document.addEventListener('DOMContentLoaded', () => {
-//     updateFlipClock();
-//     setInterval(updateFlipClock, 1000);
-// });
-
-
-
-
 
 let isFlipping = false;
 
@@ -222,30 +81,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const searchInput = document.getElementById('search-input')
 
-// searchInput.addEventListener('input', function () {
-//     const value = searchInput.value
-//     searchInput.ariaPlaceholder = value || "Search Google..."
-// })
 
-
-
-// Hide X button
 
 const clearbtn = document.getElementById('hide-btn')
 
 // change display property
 searchInput.addEventListener('input', function () {
-    if (searchInput.value) {
-        clearbtn.style.display ='block'
+    
+    if (searchInput.value.trim() !== '') {
+        clearbtn.style.display = 'block';
+    } else {
+        clearbtn.style.display = 'none';
     }
-    else {
-        clearbtn.style.display ='none'
-    }
-})
+});
 
 // clear input 
 clearbtn.addEventListener('click', function () {
-    searchInput.value = ''; 
-    clearbtn.style.display = 'none'; 
-    searchInput.focus(); 
+    searchInput.value = '';
+    clearbtn.style.display = 'none';
+    searchInput.focus();
 });
+
+//hide everthing when i switch in mobile phone on searching time 
+

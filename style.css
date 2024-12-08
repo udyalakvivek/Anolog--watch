@@ -1,7 +1,11 @@
 body {
   margin: 0;
   padding: 0;
-
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
   overflow: hidden;
 }
 * {
@@ -12,23 +16,43 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  align-items: center;
+  width: 100%;
   height: 100vh;
+  /* background-image: url(images/bg.jpg); */
   background-color: #262626;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 .greet,
 h3,
 p {
   display: inline;
   color: rgb(17, 236, 240);
+  /* color: blue; */
+  color: yellow;
+  /* background-color: blue; */
+  font-weight: bold;
   margin-bottom: 1rem;
 }
+#short_text{
+  display: none!important;
+  display: inline-block;
+  margin-top: 12px;
+  margin-bottom: 0;
+  /* background-color: blue; */
+  /* color: yellow; */
+}
 #date {
-  color: royalblue;
+  /* color: royalblue; */
+  background-color: blue;
+  color: white;
 }
 .flip-clock {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .flip-clock-section {
@@ -56,8 +80,10 @@ p {
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  background: #d5cece; /* Background color for both sides */
-  color: #000;
+  /* background: #d5cece; */
+  /* color: #000; */
+  background: rgba(52, 50, 50, 0.968);
+  color: white;
   line-height: 120px;
   font-size: 2.5rem;
   border-radius: 10px;
@@ -65,27 +91,21 @@ p {
 }
 
 .flip-card-back {
-  transform: rotateX(
-    180deg
-  ); /* Changed to rotateX(180deg) for correct flipping */
+  transform: rotateX(180deg);
 }
 
-.ampm {
-  position: absolute;
-  bottom: 0;
-  left: 110px; /* Adjusted position for spacing */
-  background: #d5cece;
-  color: #000;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 1.5rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
+
 
 .label {
-  color: #dbce25;
+  /* color: #dbce25; */
+  color: black;
+  font-weight: 700;
   margin-top: 0.5rem;
   font-size: 1rem;
+}
+.label-second{
+  color: #dbce25;
+  background-color: blue;
 }
 
 .footer-card {
@@ -109,11 +129,13 @@ p {
 
   text-align: center;
 }
+
 .nav-bar ul {
   display: flex;
   list-style: none;
-  /* gap: 12px; */
-  column-gap: 15px;
+  gap: 15px;
+
+  flex-wrap: wrap;
 }
 .nav-bar ul li {
   padding: 8px;
@@ -122,12 +144,21 @@ p {
   border-radius: 12%;
   font-size: 28px;
   display: flex;
-  background-color: #302f20;
-
+  /* background-color: #302f20; */
+  background: rgba(34, 33, 33, 0.968);
   border: 1px solid rgba(231, 224, 224, 0.074);
   justify-content: center;
   align-items: center;
 }
+/* icon colors */
+.Cyan{
+  color: rgba(19, 228, 228, 0.811);
+}
+/* .text-Black{
+  color: black;
+} */
+
+
 .nav-bar ul li a {
   display: flex;
   text-decoration: none;
@@ -141,7 +172,8 @@ p {
   color: #ffd700 !important;
 }
 .svg-icon {
-  color: black;
+  /* color: black; */
+  color: rgba(19, 228, 228, 0.811);
   transition: transform 0.4s ease, color 0.4s ease;
 }
 .svg-icon:hover {
@@ -154,12 +186,28 @@ p {
   width: 500px;
   height: 50px;
   padding-left: 18px;
+  padding-right: 40px;
   border: none;
   color: white;
   background-color: rgb(62, 58, 58);
   border-radius: 32px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: all 0.2s;
+}
+.clear-button {
+  position: fixed;
+  right: 34vw;
+  top: 8%;
+  font-size: 25px;
+  transform: translateY(-50%);
+  color: white;
+  cursor: pointer;
+  display: none;
+  transition: all 0.4s;
+}
+
+#shortcuts{
+  margin-top: 34px;
 }
 
 .search-Bar::placeholder {
@@ -178,21 +226,80 @@ p {
   background-color: #635f5f;
 }
 
-.clear-button {
-  position: absolute;
-  right: 75px;
-  top: 23%;
-  font-size: 24px;
-  transform: translateY(-50%);
-  color: white;
-  cursor: pointer;
-  display: none; 
-  transition: all 0.4s;
+
+
+.clear-button:active {
+  color: black;
+}
+.clear-button:hover {
+  color: black;
 }
 
-.clear-button:active{
-  color: black;
+/* media Query  */
+@media (max-width: 768px) {
+  .flip-card-inner {
+    width: 70px;
+    height: 70px;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    line-height: 100px;
+    font-size: 2rem;
+  }
+
+  .search-Bar {
+    width: 90%;
+    height: 60px;
+  }
+
+  .nav-bar ul li {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+
+  .label {
+    font-size: 0.9rem;
+  }
 }
-.clear-button:hover{
-  color: black;
+
+@media (max-width: 480px) {
+  .flip-card-inner {
+    width: 60px;
+    height: 80px;
+  }
+
+  .flip-card-front,
+  .flip-card-back {
+    line-height: 80px;
+    font-size: 1.5rem;
+  }
+
+  .search-Bar {
+    width: 95%;
+    height: 55px;
+  }
+
+  .nav-bar ul li {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    margin-top: 12px;
+  }
+
+  .greet,
+  p {
+    display: none;
+  }
+
+  #footer {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 60px; 
+  }
 }

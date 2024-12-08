@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Clock For Vivek Pandey</title>
-    <link rel="shortcut icon" href="/images/logo5.webp" type="image/x-icon">
+    <title>A Clock For U😇</title>
+    <link rel="shortcut icon" href="logo5.webp" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -20,50 +20,54 @@
     <div class="hero">
         <div class="nav-bar">
 
-            <div class="container text-center m-3">
-                <form action="https://www.google.com/search" method="get">
+            <div class="container text-center mt-3 hide-search">
+                <form action="https://www.google.com/search" method="get" id="search-form">
                     <input type="text" class="search-Bar" id="search-input" name="q" placeholder="Search Google..."
-                        required autofocus>
+                        required>
                     <span class="clear-button" id="hide-btn"><i class="fa-solid fa-x"></i></span>
                 </form>
             </div>
-
-
-
-            <p>Useful Shortcuts 4 U</p>
-            <ul class="m-3">
+            <p id="short_text">Useful Shortcuts 4 U</p>
+            <ul id="shortcuts">
                 <li>
-                    <a class="text-black" href="https://github.com/udyalakvivek">
+                    <a class="text-Black Cyan" href="https://github.com/udyalakvivek">
                         <i class="fa-brands fa-github"></i>
                     </a>
                 </li>
+
                 <li>
-                    <a class="text-black" href="https://fontawesome.com/">
+                    <a class="text-Black Cyan" href="https://www.linkedin.com/in/vivekpandey07/">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="text-Black Cyan" href="https://fontawesome.com/icons">
                         <i class="fa-solid fa-flag"></i>
                     </a>
                 </li>
 
                 <li>
-                    <a class="text-black" href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">
+                    <a class="text-Black Cyan" href="https://getbootstrap.com/docs/5.3/getting-started/introduction/">
                         <i class="fa-brands fa-bootstrap"></i>
                     </a>
 
                 </li>
 
                 <li>
-                    <a class="text-black" href="https://coolors.co/">
+                    <a class="text-Black Cyan" href="https://coolors.co/">
                         <i class="fa-solid fa-paint-roller"></i>
                     </a>
                 </li>
 
                 <li>
-                    <a class="text-black" href="https://www.google.com/">
+                    <a class="text-Black Cyan" href="https://www.google.com/">
                         <i class="fa-brands fa-google"></i>
+
                     </a>
                 </li>
 
                 <li>
-                    <a class="text-black" href="https://www.youtube.com/">
+                    <a class="text-Black Cyan" href="https://www.youtube.com/">
                         <i class="fa-brands fa-youtube"></i>
                     </a>
                 </li>
@@ -96,7 +100,7 @@
                 </li>
 
                 <li>
-                    <a href="https://chatgpt.com/" class="chatgpt-icon">
+                    <a href="https://www.blackbox.ai/chat/ZMXO77I?model=gpt-4o" class="chatgpt-icon">
                         <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
                             viewBox="0 0 50 50" fill="currentColor">
                             <path
@@ -108,7 +112,7 @@
                 </li>
             </ul>
         </div>
-        <div class="greet">
+        <div class="greet" id="greet-container">
             <p id="greeting"></p>
             <p id="date"></p>
         </div>
@@ -134,12 +138,12 @@
                 </div>
                 <div class="flip-clock-section">
                     <div class="flip-card">
-                        <div class="flip-card-inner">
+                        <div class="flip-card-inner ">
                             <div class="flip-card-front" id="second-front">00</div>
                             <div class="flip-card-back" id="second-back">00</div>
                         </div>
                     </div>
-                    <div class="label">SECONDS</div>
+                    <div class="label label-second">SECONDS</div>
                 </div>
                 <div class="flip-clock-section ">
                     <div class="flip-card">
