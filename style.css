@@ -11,6 +11,10 @@ body {
 * {
   font-family: cursive;
 }
+
+#search-form{
+      font-family: Arial, sans-serif;
+}
 .hero {
   display: flex;
   flex-direction: column;
@@ -92,6 +96,25 @@ p {
 
 .flip-card-back {
   transform: rotateX(180deg);
+}
+
+/* search suggest */
+.ui-autocomplete {
+    background-color: #222 !important;
+    color: #fff !important;
+    border: 1px solid #444 !important;
+    font-family: Arial, sans-serif !important;
+
+}
+.ui-menu-item {
+    padding: 10px !important;
+    font-size: 16px !important;
+    font-family: Arial, sans-serif !important;
+
+}
+.ui-menu-item:hover {
+    background-color: #333 !important;
+    cursor: pointer !important;
 }
 
 

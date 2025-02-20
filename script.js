@@ -3,19 +3,30 @@ let isFlipping = false;
 
 function getGreeting() {
     const now = new Date();
+    const day = now.getDate();
+    const month = now.getMonth() + 1; // JavaScript months 0 se start hote hain, isliye +1 kiya hai
     const hours = now.getHours();
 
+    // Agar aaj 7 Feb hai, toh Happy Birthday return karo
+    if (day === 7 && month === 2) {
+        return "Happy Birthday Vivek!";
+    }
+
+    // Normal Greetings
     if (hours < 12) {
         return "Good Morning";
     } else if (hours < 15) {
         return "Good Afternoon";
     } else if (hours < 22) {
         return "Good Evening";
-    }
-    else {
+    } else {
         return "Good Night";
     }
 }
+
+// Example: Greeting ko console mein dekhne ke liye
+// console.log(getGreeting());
+
 
 function updateFlipClock() {
     const now = new Date();
@@ -87,7 +98,7 @@ const clearbtn = document.getElementById('hide-btn')
 
 // change display property
 searchInput.addEventListener('input', function () {
-    
+
     if (searchInput.value.trim() !== '') {
         clearbtn.style.display = 'block';
     } else {
@@ -104,3 +115,27 @@ clearbtn.addEventListener('click', function () {
 
 //hide everthing when i switch in mobile phone on searching time 
 
+// search suggestion
+
+$(function () {
+    $("#search-input").autocomplete({
+        source: function (request, response) {
+            $.ajax({
+                url: "https://suggestqueries.google.com/complete/search",
+                dataType: "jsonp",
+                data: {
+                    client: "firefox",
+                    q: request.term
+                },
+                success: function (data) {
+                    response(data[1]);
+                }
+            });
+        },
+        minLength: 2,
+        select: function (event, ui) {
+            $("#search-input").val(ui.item.value); // Select suggestion
+            $("#search-form").submit(); // Form automatically submit karega
+        }
+    });
+});
