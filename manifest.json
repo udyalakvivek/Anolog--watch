@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "A Clock F0r U",
-  "version": "1.0",
+  "version": "2.0",
   "description": "A simple flip clock extension.",
   "action": {
     "default_popup": "index.html"
