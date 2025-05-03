@@ -15,7 +15,7 @@ function getGreeting() {
     // Normal Greetings
     if (hours < 12) {
         return "Good Morning";
-    } else if (hours < 15) {
+    } else if (hours < 16) {
         return "Good Afternoon";
     } else if (hours < 22) {
         return "Good Evening";
