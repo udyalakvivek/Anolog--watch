@@ -7,9 +7,7 @@
     "default_popup": "index.html"
   },
   "permissions": ["tabs"],
-    "host_permissions": [
-    "https://suggestqueries.google.com/*"
-  ],
+
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
